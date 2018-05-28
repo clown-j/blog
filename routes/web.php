@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 // 定义上传路由
 Route::get('edit', 'Edittest\EditController@editui');
+Route::post('upload', 'Edittest\EditController@upload');

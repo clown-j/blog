@@ -7,7 +7,8 @@
     <title>请输入文章内容</title>
 </head>
 <body>
-    <form action="" method="post" enctype="multipart/form-data"> 
+    <form action="/upload" method="post" enctype="multipart/form-data"> 
+    {{ csrf_field() }}
     <input type="file" name="file_name">
     <input type="submit" value="上传">
     </form>
