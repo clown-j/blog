@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// 定义上传路由
+Route::get('edit', 'Edittest\EditController@editui');

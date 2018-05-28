@@ -7,5 +7,7 @@ use App\Http\Controllers\Controller;
 
 class EditController extends Controller
 {
-    //
+    public function editui(){
+        return view('edittest.index');
+    }
 }
