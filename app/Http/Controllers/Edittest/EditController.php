@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Edittest;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Article;
 class EditController extends Controller
 {
     public function editui(){
@@ -18,5 +18,14 @@ class EditController extends Controller
         $file_abspath = $request->file('file_name')->store($file_path);
         // 返回成功
         return array("errno"=>0, "data"=>array($file_abspath));
+    }
+
+    public function showarticle(){
+        $article = Article::findOrFail(1);
+        return $article;
+    }
+
+    public function storearticle(Request $request){
+        dd($request->input('title'));
     }
 }
