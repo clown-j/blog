@@ -26,6 +26,12 @@ class EditController extends Controller
     }
 
     public function storearticle(Request $request){
-        dd($request->input('title'));
+        $title = $request->title;
+        $summary = $request->summary;
+        $img = $request->img;
+        $content = $request->content;
+        Article::create(['title'=>$title,'summary'=>$summary, 'img'=>$img, 'content'=>$content]);
+        return redirect('edit');
+        
     }
 }
