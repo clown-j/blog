@@ -26,6 +26,11 @@ class EditController extends Controller
     }
 
     public function storearticle(Request $request){
+        $this->validate($request, [
+            'title' => 'required|max:50',
+            'summary' => 'required|max:50',
+            'img' => 'required'
+        ]);
         $title = $request->title;
         $summary = $request->summary;
         $img = $request->img;

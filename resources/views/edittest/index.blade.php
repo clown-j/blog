@@ -15,6 +15,14 @@
 
     <h1 style="text-align:center">文章输入页面</h1>
     
+    @if(count($errors)>0)
+    <h2>
+        @foreach($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+    </h2>
+    @endif
+
     <form action="/article" method="POST" id="postlal">
         {{ csrf_field() }}
         标题： <input type="text" name="title" placeholder="请输入文章标题">
