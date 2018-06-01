@@ -7,8 +7,9 @@ use App\Http\Controllers\Controller;
 
 class UploadController extends Controller
 {
-    public function upload(Request $request){
+    public function wangUpload(Request $request){
         $storage_path = 'upload/'.date('Ymd');
-        $real_path = $request->file('img')->store($storage_path);
+        $real_path = $request->file('wangImg')->store($storage_path);
+        return array("errno"=>0, "data"=>array($real_path));
     }
 }

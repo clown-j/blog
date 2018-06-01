@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('web.page.add-posts');
 });
+
+// 功能性路由
+Route::post('wangUpload', 'component\UploadController@wangUpload');
+
+
+//vo
+Route::resource('posts', 'vo\PostsController@storePost');
